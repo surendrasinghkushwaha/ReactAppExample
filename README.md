@@ -28,7 +28,9 @@ https://code.visualstudio.com/docs/nodejs/reactjs-tutorial
 Tip: To test that you have Node.js and npm correctly installed on your machine, you can type 
 ---------------
 node --version 
+
 ---------------and ---------------
+
 npm --version 
 ---------------
 in a terminal or command prompt.
