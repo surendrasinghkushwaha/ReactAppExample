@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import  ButtonComponet from './ButtonComponent';
 
 class App extends Component {
   render() {
@@ -10,10 +11,23 @@ class App extends Component {
           <p>
             hello.
           </p> 
-          <button class="btn btn-primary">
-                  User <span class="badge badge"></span>
-          </button>
-      </div>
+          <ButtonComponet customprop="World"> 
+          </ButtonComponet>
+          <hr/> 
+           <ButtonComponentClickFeature customprop="clickable"> 
+          </ButtonComponentClickFeature>
+     </div>
+    );
+  }
+}
+class ButtonComponentClickFeature extends Component {
+  handleclick(){ alert('ButtonComponentClickFeature handleclick() call');} 
+
+  render() {
+    return ( 
+          <button class="btn btn-primary" onClick={this.handleclick}>
+                 {this.props.customprop}  
+          </button> 
     );
   }
 }
