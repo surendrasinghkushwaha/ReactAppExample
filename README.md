@@ -72,11 +72,16 @@ npm start
 You should see "Welcome to React" on http://localhost:3000 in your browser. We'll leave the web server running while we look at the application with VS Code.
 To open your React application in VS Code, open another terminal or command prompt window, navigate to the my-app folder and type code .:
 --------------
+
 cd my-app
 code .
+
 --------------
 
 npm install ts-pnp@1.0.0
+
 npm install popper.js@^1.14.7
+
 npm install jquery@1.9.1
+
 npm install bootstrap
