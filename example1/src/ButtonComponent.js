@@ -6,7 +6,7 @@ class ButtonComponent extends Component {
     render() {
       return ( 
             <button class="btn btn-primary">
-                   {this.props.customprop}  
+                   {this.props.abc}  
             </button> 
       );
     }
