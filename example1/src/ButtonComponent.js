@@ -5,8 +5,8 @@ class ButtonComponent extends Component {
    
     render() {
       return ( 
-            <button class="btn btn-primary">
-                   {this.props.abc}  
+            <button className="btn btn-primary" onClick={this.props.parentmethod}>
+                button-   {this.props.abc}  
             </button> 
       );
     }

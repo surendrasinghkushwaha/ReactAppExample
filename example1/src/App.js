@@ -19,9 +19,9 @@ class App extends Component {
      */
   constructor(props) {
     super(props);
-    this.state = {Name: ''};
+    this.state = {Name: '',buttonname:''};
     this.myHandlerEvent=this.myHandlerEvent.bind(this);
-    
+     //this.myinitialStateEvent=this.myinitialStateEvent.bind(this);
   }
 
   mymethod( ){  
@@ -32,6 +32,11 @@ class App extends Component {
     Name: value
     });
  }
+ myinitialStateEvent( ){ 
+  this.setState({
+    buttonname: 'button name change'
+    });
+ }
   render() {
      
     return (
@@ -39,10 +44,10 @@ class App extends Component {
           <p>
             hello {this.state.Name},
           </p> 
-          <ButtonComponet abc={this.mymethod()}> 
+          <ButtonComponet abc={this.state.buttonname} parentmethod={this.myinitialStateEvent.bind(this)}> 
           </ButtonComponet>
           <hr/> 
-           <ButtonComponentClickFeature customprop="clickable" parentmethod={this.myHandlerEvent }>  
+           <ButtonComponentClickFeature customprop="call perent method" parentmethod={this.myHandlerEvent }>  
           </ButtonComponentClickFeature>
      </div>
     );
@@ -52,17 +57,26 @@ class App extends Component {
 class ButtonComponentClickFeature extends Component {
   constructor(props) {
     super(props);
-    this.handleclick= this.handleclick.bind(this);
+    this.state = {title: ''};
+    this.handleclick= this.handleclick.bind(this); 
+    this.handleStateclick= this.handleStateclick.bind(this);
   }
    
   handleclick(){ debugger; 
     this.props.parentmethod( 'ttttt-change ');
   } 
-
+  handleStateclick(){ debugger; 
+    if(this.state.title==="")
+    this.setState({ title:  'changes Done..... '});
+    else this.setState({ title: ''});
+  } 
   render() {
     return ( <div > Child component <br/>
-          <button class="btn btn-primary" onClick={this.handleclick}>
+          <button className="btn btn-primary" onClick={this.handleclick}>
                  {this.props.customprop}  
+          </button> <br/>
+          <button className="btn btn-primary" onClick={this.handleStateclick}>
+              change child state-   {this.state.title}  
           </button> </div>
     );
   }
