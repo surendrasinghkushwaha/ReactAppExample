@@ -1,5 +1,4 @@
 import * as actionTypes from '../actions/actionTypes';
-import $ from 'jquery';
 export default (state = [], action) => {
     switch (action.type){
       case actionTypes.GET_COUNTRY_FILE: { 
