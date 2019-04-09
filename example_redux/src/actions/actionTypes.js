@@ -1,0 +1,2 @@
+export const GET_COUNTRY_FILE = 'GET_COUNTRY_FILE';
+export const CLEAR_COUNTRY = 'CLEAR_COUNTRY'; 
